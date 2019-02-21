@@ -1,0 +1,18 @@
+<!-- Transitions an element's height from 0 to auto when its height is unknown. -->
+<style>
+.el {
+  transition: max-height 0.5s;
+  overflow: hidden;
+  max-height: 0;
+}
+
+.trigger:hover > .el {
+  max-height: var(--max-height);
+}
+</style>
+
+<script>
+	var el = document.querySelector('.el')
+	var height = el.scrollHeight
+	el.style.setProperty('--max-height', height + 'px')
+</script>
